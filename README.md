@@ -6,4 +6,4 @@ Use W,A,S,D to Play.
 ScreenShot:
 
 
-![](https://i.ibb.co/x21WwCK/snip.png)
+![](https://i.ibb.co/Ykkh2PY/Capture.png)
