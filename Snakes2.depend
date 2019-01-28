@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1548677962 source:h:\c.c++\snakes2\main.cpp
+	<stdio.h>
+	"GUI.h"
+	"color.h"
+	"gotoxy.h"
+
+1547975228 h:\c.c++\snakes2\gui.h
+	"windows.h"
+	<stdio.h>
+
+1546346358 h:\c.c++\snakes2\gotoxy.h
+	<windows.h>
+	<stdio.h>
+
+1499820826 h:\c.c++\snakes2\color.h
+	<windows.h>
+	<stdio.h>
+
