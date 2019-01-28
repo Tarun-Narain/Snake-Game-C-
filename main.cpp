@@ -1,13 +1,17 @@
 #include<stdio.h>
 #include "GUI.h"
+#include<conio.h>
 #include "color.h"
 #include "gotoxy.h"
+#include<stdlib.h>
 int posx=0;
 int posy=0;
 int sizes=6;
 int prizex=0;
 int prizey=0;
 int score=0;
+int lastx=0;
+int lasty=0;
 int time=120;
 class node
 {
@@ -17,7 +21,7 @@ public :
     int nodey;
     void createRand()
     {
-        time=time-10;
+        time=time-4;
         sizes++;
         score++;
         prizex=rand()%67;
@@ -31,7 +35,7 @@ public :
         gotoxy(70, 9);
         printf("Snake = %d", sizes);
         gotoxy(prizex, prizey);
-        printf("*");
+        printf("%c", 489);
     }
     void GameOver()
     {
@@ -39,6 +43,10 @@ public :
         {
          gotoxy(20, 20);
         printf("\t\tGameOver, Your Score = %d", score);
+        gotoxy(20, 21);
+        printf("\t\tPress Any Key to Exit");
+      getch();
+            exit(EXIT_FAILURE);
         }
     }
     int update(int x, int y)
@@ -47,12 +55,16 @@ public :
             GameOver();
             else if(x==prizex&&y==prizey)
                 createRand();
+        gotoxy(lastx, lasty);
+        printf("o");
         gotoxy(x, y);
       nodex=x;
       nodey=y;
         posx=x;
         posy=y;
-        printf("#");
+        printf("@");
+        lastx=x;
+        lasty=y;
     }
     void CreateNode(int x, int y, int i)
     {
@@ -60,7 +72,7 @@ public :
         nodex=x;
         nodey=y;
         gotoxy(nodex, nodey);
-        printf("#");
+        printf("%c", 489);
     }
     void Clear()
     {
@@ -150,6 +162,8 @@ class snake
 
 int main()
 {
+
+    SetColor(15);
 printf("-----------------------------------------------------------------------------\n");
 printf("----------------------------------------Snake Game---------------------------\n");
    hidecursor();
